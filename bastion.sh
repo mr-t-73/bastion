@@ -64,7 +64,7 @@ buildFunction()
 	echo "Complete"
 
 	echo "Detecting IP address of Postgres ..."
-	RDS_IP=`ssh -oStrictHostKeyChecking=no -i mrtkeypair.pem ec2-user@${PUBLIC_IP} "dig +short sporsferdb.cobvgyoz1u1e.ap-southeast-2.rds.amazonaws.com"`
+	RDS_IP=`ssh -oStrictHostKeyChecking=no -i ${KEY_PAIR} ec2-user@${PUBLIC_IP} "dig +short ${DNS_NAME}"`
 	echo "RDS Postgres is running on IP Address [${RDS_IP}]"
 	echo "Complete"
 
